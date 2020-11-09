@@ -132,7 +132,7 @@ static ngx_int_t ngx_http_redirectionio_postconfiguration(ngx_conf_t *cf) {
 #ifdef NGX_HTTP_PRECONTENT_PHASE
     redirect_handler = ngx_array_push(&cmcf->phases[NGX_HTTP_PRECONTENT_PHASE].handlers);
 #else
-    redirect_handler = ngx_array_push(&cmcf->phases[NGX_HTTP_PREACCESS_PHASE].handlers);
+    redirect_handler = ngx_array_push(&cmcf->phases[NGX_HTTP_POST_ACCESS_PHASE].handlers);
 #endif
 
     if (redirect_handler == NULL) {
